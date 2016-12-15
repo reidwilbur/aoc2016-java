@@ -1,4 +1,4 @@
-package aoc;
+package com.wilb0t.aoc;
 
 import com.google.common.base.Throwables;
 import com.google.common.cache.CacheBuilder;

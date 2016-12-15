@@ -1,4 +1,4 @@
-package aoc;
+package com.wilb0t.aoc;
 
 import org.junit.Before;
 import org.junit.Test;
