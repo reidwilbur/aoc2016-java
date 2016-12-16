@@ -2,14 +2,19 @@ package com.wilb0t.aoc;
 
 public class Day16 {
 
-  public static String process(String bits) {
-    StringBuilder nbits = new StringBuilder((bits.length()*2)+1);
-    nbits.append(bits);
-    nbits.append('0');
-    for (int idx = bits.length() - 1; idx >= 0; idx--) {
-      nbits.append((bits.charAt(idx) == '1') ? '0' : '1');
+  public static String genBits(String initBits, int bitsLen) {
+    StringBuilder data = new StringBuilder(bitsLen);
+    data.append(initBits);
+
+    while (data.length() < bitsLen) {
+      int curLen = data.length();
+      data.append('0');
+      for (int idx = curLen - 1; (idx >= 0) && (data.length() < bitsLen); idx--) {
+        data.append((data.charAt(idx) == '1') ? '0' : '1');
+      }
     }
-    return nbits.toString();
+
+    return data.toString();
   }
 
   public static String genHash(String bits) {
@@ -25,11 +30,7 @@ public class Day16 {
   }
 
   public static String getCheckSum(String initBits, int dataLen) {
-    String data = initBits;
-    while (data.length() < dataLen) {
-      data = process(data);
-    }
-    data = data.substring(0, dataLen);
+    String data = genBits(initBits, dataLen);
 
     String hash = genHash(data);
     while (hash.length() % 2 == 0) {

@@ -8,11 +8,11 @@ import static org.junit.Assert.assertThat;
 public class Day16Test {
 
   @Test
-  public void testProcess() {
-    assertThat(Day16.process("1"), is("100"));
-    assertThat(Day16.process("0"), is("001"));
-    assertThat(Day16.process("11111"), is("11111000000"));
-    assertThat(Day16.process("111100001010"), is("1111000010100101011110000"));
+  public void testGenBits() {
+    assertThat(Day16.genBits("1", 3), is("100"));
+    assertThat(Day16.genBits("0", 3), is("001"));
+    assertThat(Day16.genBits("11111", 11), is("11111000000"));
+    assertThat(Day16.genBits("111100001010", 25), is("1111000010100101011110000"));
   }
 
   @Test
