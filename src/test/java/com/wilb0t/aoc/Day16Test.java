@@ -16,23 +16,23 @@ public class Day16Test {
   }
 
   @Test
-  public void testGenHash() {
-    assertThat(Day16.genHash("110010110100"), is("110101"));
-    assertThat(Day16.genHash("110101"), is("100"));
+  public void testGenCheckSum() {
+    assertThat(Day16.genCheckSum("110010110100"), is("100"));
+    assertThat(Day16.genCheckSum("10000011110010000111"), is("01100"));
   }
 
   @Test
-  public void testGenCheckSum_TestData() {
-    assertThat(Day16.getCheckSum("10000", 20), is("01100"));
+  public void testGenBitsAndCheckSum_TestData() {
+    assertThat(Day16.genBitsAndCheckSum("10000", 20), is("01100"));
   }
 
   @Test
-  public void testGenCheckSum_Part1() {
-    assertThat(Day16.getCheckSum("11011110011011101", 272), is("00000100100001100"));
+  public void testGenBitsAndCheckSum_Part1() {
+    assertThat(Day16.genBitsAndCheckSum("11011110011011101", 272), is("00000100100001100"));
   }
 
   @Test
-  public void testGenCheckSum_Part2() {
-    assertThat(Day16.getCheckSum("11011110011011101", 35651584), is("00011010100010010"));
+  public void testGenBitsAndCheckSum_Part2() {
+    assertThat(Day16.genBitsAndCheckSum("11011110011011101", 35651584), is("00011010100010010"));
   }
 }
