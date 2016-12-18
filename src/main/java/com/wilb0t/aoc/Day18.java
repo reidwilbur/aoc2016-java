@@ -1,6 +1,5 @@
 package com.wilb0t.aoc;
 
-import java.io.IOException;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -8,7 +7,6 @@ public class Day18 {
 
   public static String nextRow(String row) {
     String expRow = '.' + row + '.';
-    int safecount = 0;
     return IntStream.range(1, row.length()+1)
         .map(i ->
             ((expRow.charAt(i-1) == '^') ? 0b100 : 0b0)
