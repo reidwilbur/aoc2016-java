@@ -10,17 +10,17 @@ import static org.junit.Assert.assertThat;
 
 public class Day18Test {
 
-  String input = ".^^..^...^..^^.^^^.^^^.^^^^^^.^.^^^^.^^.^^^^^^.^...^......^...^^^..^^^.....^^^^^^^^^....^^...^^^^..^";
+  BitString input = toRow(".^^..^...^..^^.^^^.^^^.^^^^^^.^.^^^^.^^.^^^^^^.^...^......^...^^^..^^^.....^^^^^^^^^....^^...^^^^..^");
 
   @Test
   public void testNextRow() {
-    assertThat(nextRow("..^^."), is(".^^^^"));
-    assertThat(nextRow(".^^^^"), is("^^..^"));
+    assertThat(nextRow(toRow("..^^.")), is(toRow(".^^^^")));
+    assertThat(nextRow(toRow(".^^^^")), is(toRow("^^..^")));
   }
 
   @Test
   public void testGetSafeTileCount_TestInput() {
-    assertThat(getSafeTileCount(".^^.^.^^^^", 10), is(38));
+    assertThat(getSafeTileCount(toRow(".^^.^.^^^^"), 10), is(38));
   }
 
   @Test
